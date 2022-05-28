@@ -1,4 +1,4 @@
-package main
+package findDefectBall
 
 import (
 	"fmt"
@@ -69,7 +69,7 @@ type defection struct {
 var numOfBalls = 11
 var DefectBall = defection{number: 2, status: heavy}
 
-func createBalls(numBalls int) *set {
+func CreateBalls(numBalls int) *set {
 	balls := NewSet()
 	for i := 0; i < numBalls; i++ {
 		balls.Add(i)
@@ -253,7 +253,7 @@ func solveUnequal(heavyBalls, lightBalls *set) defection {
 }
 
 func main() {
-	balls := createBalls(numOfBalls)
+	balls := CreateBalls(numOfBalls)
 	def := Solve(balls)
 	if def == DefectBall {
 		fmt.Println("Pass")
